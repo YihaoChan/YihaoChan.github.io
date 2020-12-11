@@ -1,0 +1,4 @@
+---
+title: CATEGORIES
+type: "categories"
+---
