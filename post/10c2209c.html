@@ -40,7 +40,7 @@
 <meta property="og:image" content="http://example.com/images/Vim%E7%9A%84%E7%B3%BB%E7%BB%9F%E5%89%AA%E8%B4%B4%E6%9D%BF%E7%9A%84%E5%A5%87%E5%A6%99%E5%8F%91%E7%8E%B0/%E6%8F%92%E5%85%A5%E6%A8%A1%E5%BC%8F%E6%89%8B%E5%8A%A8%E5%A4%8D%E5%88%B6.png">
 <meta property="og:image" content="http://example.com/images/Vim%E7%9A%84%E7%B3%BB%E7%BB%9F%E5%89%AA%E8%B4%B4%E6%9D%BF%E7%9A%84%E5%A5%87%E5%A6%99%E5%8F%91%E7%8E%B0/%E6%8F%92%E5%85%A5%E6%A8%A1%E5%BC%8F%E6%89%8B%E5%8A%A8%E5%A4%8D%E5%88%B6-%E5%85%B3%E6%8E%89%E5%90%8E%E7%B2%98%E8%B4%B4.png">
 <meta property="article:published_time" content="2020-12-11T08:34:35.000Z">
-<meta property="article:modified_time" content="2020-12-11T15:00:56.109Z">
+<meta property="article:modified_time" content="2020-12-12T06:27:15.894Z">
 <meta property="article:author" content="Yihao Chan">
 <meta property="article:tag" content="Vim">
 <meta name="twitter:card" content="summary">
@@ -228,10 +228,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-12-11 16:34:35 / Modified: 23:00:56" itemprop="dateCreated datePublished" datetime="2020-12-11T16:34:35+08:00">2020-12-11</time>
+              <time title="Created: 2020-12-11 16:34:35" itemprop="dateCreated datePublished" datetime="2020-12-11T16:34:35+08:00">2020-12-11</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-12-12 14:27:15" itemprop="dateModified" datetime="2020-12-12T14:27:15+08:00">2020-12-12</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -248,14 +254,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2.8k</span>
+              <span>2.7k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>3 mins.</span>
+              <span>2 mins.</span>
             </span>
 
         </div>
@@ -287,7 +293,7 @@
 <p><img data-src="/images/Vim%E7%9A%84%E7%B3%BB%E7%BB%9F%E5%89%AA%E8%B4%B4%E6%9D%BF%E7%9A%84%E5%A5%87%E5%A6%99%E5%8F%91%E7%8E%B0/%E5%A4%8D%E5%88%B6%E5%88%B0Vim%E4%BB%A5%E5%A4%96.png"></p>
 <p>在Vim中执行<code>:wq</code>退出Vim窗口，再到另一个地方按下快捷键<code>ctrl + v</code>，可以发现，<strong>什么都没有</strong>。</p>
 <p>当我好几次重复上述过程都发现，没有办法在关闭Vim的情况下粘贴已经在Vim中复制的内容的时候，我就开始有点怀疑了：Vim的系统剪贴板，到底是不是真正的”系统”剪贴板？</p>
-<h2 id="4-结合xclip-o仔细观察"><a href="#4-结合xclip-o仔细观察" class="headerlink" title="4. 结合xclip -o仔细观察"></a>4. 结合xclip -o仔细观察</h2><p>在终端再次打印_Test for system clipboard._并手动复制，然后执行<code>xclip -o</code>，可以看到Linux的系统剪贴板内容此时就是我们复制的内容。</p>
+<h2 id="4-结合xclip-o仔细观察"><a href="#4-结合xclip-o仔细观察" class="headerlink" title="4. 结合xclip -o仔细观察"></a>4. 结合xclip -o仔细观察</h2><p>在终端再次打印(Test for system clipboard.)并手动复制，然后执行<code>xclip -o</code>，可以看到Linux的系统剪贴板内容此时就是我们复制的内容。</p>
 <p><img data-src="/images/Vim%E7%9A%84%E7%B3%BB%E7%BB%9F%E5%89%AA%E8%B4%B4%E6%9D%BF%E7%9A%84%E5%A5%87%E5%A6%99%E5%8F%91%E7%8E%B0/%E5%86%8D%E6%AC%A1xclip.png"></p>
 <p>而当我们在Vim中通过命令模式执行<code>&quot;+yy</code>之后，我们可以的确可以将Vim中复制的内容原封不动地粘贴到Vim以外的地方。<strong>但是，</strong><code>xclip -o</code>查看到的却是我们之前在Vim以外的地方手动复制的内容。</p>
 <p><img data-src="/images/Vim%E7%9A%84%E7%B3%BB%E7%BB%9F%E5%89%AA%E8%B4%B4%E6%9D%BF%E7%9A%84%E5%A5%87%E5%A6%99%E5%8F%91%E7%8E%B0/%E4%B8%A4%E6%AC%A1%E5%AF%B9%E6%AF%94.png" alt="&quot;Test for Vim clipboard.&quot;是我从Vim中复制并粘贴到终端上的内容，而&quot;Test for system clipboard.&quot;是我之前手动在终端上复制的内容。"></p>
@@ -295,9 +301,10 @@
 <p><img data-src="/images/Vim%E7%9A%84%E7%B3%BB%E7%BB%9F%E5%89%AA%E8%B4%B4%E6%9D%BF%E7%9A%84%E5%A5%87%E5%A6%99%E5%8F%91%E7%8E%B0/xclip%E7%9C%8B%E5%88%B0%E4%B9%8B%E5%89%8D.png" alt="&quot;空行&quot;是我关掉Vim后按下粘贴快捷键后显示的内容，而&quot;Test for system clipboard.&quot;是我之前手动在终端上复制的内容。"></p>
 <h2 id="5-浅显通俗的猜想与拙见"><a href="#5-浅显通俗的猜想与拙见" class="headerlink" title="5. 浅显通俗的猜想与拙见"></a>5. 浅显通俗的猜想与拙见</h2><p>由此可见，Vim的”系统”剪贴板，并没有真正将内容拷贝到Linux的系统剪贴板上，当Vim这个进程被关闭了之后，Vim的”系统”剪贴板上的东西就会全部消失，并且也让Linux的系统剪贴板上的内容消失。</p>
 <p>在与同学分享并讨论这个情况之后，我们用通俗的猜想去理解这个现象：在Vim中执行<code>&quot;+yy</code>命令后，VIm对Linux的粘贴快捷键进行了”劫持”。</p>
-<p>在Vim进程未关闭的时候，我们去往Vim以外的任何地方进行粘贴，粘贴的内容都是保存在Vim的系统剪贴板寄存器中的内容，并且此时我们的粘贴快捷键粘贴的内容，已经和我们Linux的系统剪贴板上的内容<strong>没有任何关系</strong>。相当于，在Vim收到了<code>&quot;+yy</code>这个命令后，Vim”劫持”掉了我们Linux系统的粘贴快捷键，不管我们粘贴什么东西，都是来自于Vim的系统剪贴板寄存器。而在Vim进程关闭之后，自然Vim的寄存器随着Vim进程的关闭而消失，所以Vim的系统剪贴板寄存器中的内容被清空。而此时由于Linux的粘贴快捷键在之前已经被Vim”劫持”，并且Vim在关闭进程的时候也**没有”归还”**Linux的粘贴快捷键内容，因此，在Vim关闭后，不管我们怎么敲粘贴快捷键，都是一片空白。但<code>xclip -o</code>还是查看到了我们在Vim中复制之前的Linux系统剪贴板内容，可我们已经和它无缘。</p>
+<p>在Vim进程未关闭的时候，我们去往Vim以外的任何地方进行粘贴，粘贴的内容都是保存在Vim的系统剪贴板寄存器中的内容，并且此时我们的粘贴快捷键粘贴的内容，已经和我们Linux的系统剪贴板上的内容<strong>没有任何关系</strong>。相当于，在Vim收到了<code>&quot;+yy</code>这个命令后，Vim”劫持”掉了我们Linux系统的粘贴快捷键，不管我们粘贴什么东西，都是来自于Vim的系统剪贴板寄存器。而在Vim进程关闭之后，自然Vim的寄存器随着Vim进程的关闭而消失，所以Vim的系统剪贴板寄存器中的内容被清空。而此时由于Linux的粘贴快捷键在之前已经被Vim”劫持”，并且Vim在关闭进程的时候也<strong>没有归还</strong>Linux的粘贴快捷键内容，因此，在Vim关闭后，不管我们怎么敲粘贴快捷键，都是一片空白。但<code>xclip -o</code>还是查看到了我们在Vim中复制之前的Linux系统剪贴板内容，可我们已经和它无缘。</p>
 <h2 id="6-尝试将内容复制到Linux的系统粘贴板"><a href="#6-尝试将内容复制到Linux的系统粘贴板" class="headerlink" title="6. 尝试将内容复制到Linux的系统粘贴板"></a>6. 尝试将内容复制到Linux的系统粘贴板</h2><p>那么，如何真正做到在Vim中复制内容之后，即使在将Vim关闭之后，也能在其他地方粘贴呢？</p>
-<h3 id="6-1-尝试1：可视模式"><a href="#6-1-尝试1：可视模式" class="headerlink" title="6.1 尝试1：可视模式"></a>6.1 尝试1：可视模式</h3><p>在Vim中按下<code>Esc</code>进入命令模式，再按下<code>v</code>进入可视模式。按左右方向键对字符进行选中，再按下y键进行复制。关闭Vim，敲下粘贴快捷键，<strong>一片空白。</strong><br>结论：可视模式无法将Vim中的内容复制到Linux的系统剪贴板。</p>
+<h3 id="6-1-尝试1：可视模式"><a href="#6-1-尝试1：可视模式" class="headerlink" title="6.1 尝试1：可视模式"></a>6.1 尝试1：可视模式</h3><p>在Vim中按下<code>Esc</code>进入命令模式，再按下<code>v</code>进入可视模式。按左右方向键对字符进行选中，再按下y键进行复制。关闭Vim，敲下粘贴快捷键，<strong>一片空白。</strong></p>
+<p>结论：可视模式无法将Vim中的内容复制到Linux的系统剪贴板。</p>
 <h3 id="6-2-尝试2：插入模式"><a href="#6-2-尝试2：插入模式" class="headerlink" title="6.2 尝试2：插入模式"></a>6.2 尝试2：插入模式</h3><p>在Vim中按下<code>Esc</code>进入命令模式，再按下<code>i</code>进入插入模式。用<strong>鼠标</strong>手动选中内容，并按下Linux系统的复制快捷键<code>ctrl + shift + c</code>复制。<br><img data-src="/images/Vim%E7%9A%84%E7%B3%BB%E7%BB%9F%E5%89%AA%E8%B4%B4%E6%9D%BF%E7%9A%84%E5%A5%87%E5%A6%99%E5%8F%91%E7%8E%B0/%E6%8F%92%E5%85%A5%E6%A8%A1%E5%BC%8F%E6%89%8B%E5%8A%A8%E5%A4%8D%E5%88%B6.png"></p>
 <p>关闭Vim，敲下Linux的粘贴快捷键，<strong>成功</strong>将Vim中内容复制到Vim以外。此时执行<code>xclip -o</code>命令，可以看到Linux的系统剪贴板也显示我们在Vim中通过插入模式用鼠标选中并复制的内容。<br><img data-src="/images/Vim%E7%9A%84%E7%B3%BB%E7%BB%9F%E5%89%AA%E8%B4%B4%E6%9D%BF%E7%9A%84%E5%A5%87%E5%A6%99%E5%8F%91%E7%8E%B0/%E6%8F%92%E5%85%A5%E6%A8%A1%E5%BC%8F%E6%89%8B%E5%8A%A8%E5%A4%8D%E5%88%B6-%E5%85%B3%E6%8E%89%E5%90%8E%E7%B2%98%E8%B4%B4.png"></p>
 <p>结论：要想在关掉VIm之后，将在Vim中复制的内容送到Linux的系统剪贴板，需要在Vim中切换到插入模式，并用鼠标手动选中内容，再按下Linux系统的复制快捷键。之后即使关掉Vim，也能将内容粘贴到任意地方。<strong>但是</strong>，这不就违背了Vim的核心思想——“只通过键盘操作，解放鼠标操作”了吗？(滑稽)。</p>
